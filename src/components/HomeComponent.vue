@@ -18,9 +18,9 @@
         <component v-bind:is="currentMenu"></component>
       </div>
     </nav>
-    <img class="cover" src="/images/long-cover.jpg" alt="cover" ref="cover" />
-    <h1 class="cover-date">{{ new Date().toLocaleDateString() }}</h1>
   </header>
+  <img class="cover" src="/images/long-cover.jpg" alt="cover" ref="cover" />
+  <h1 class="cover-date">{{ new Date().toLocaleDateString() }}</h1>
 </template>
 
 <script>
@@ -97,6 +97,7 @@ export default defineComponent({
     height: 100vh;
     position: relative;
     display: flex;
+    width: 750px;
   }
   .cover {
     position: absolute;
@@ -119,8 +120,9 @@ export default defineComponent({
   nav {
     background: #fff;
     z-index: 2;
-    width: 40%;
-    height: 20%;
+    width: 100%;
+    height: 100px;
+    min-height: 100px;
     color: #916356;
   }
 
@@ -128,9 +130,13 @@ export default defineComponent({
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 20%;
-    width: 40%;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 100px;
+    min-height: 100px;
+    /*height: 20%;*/
+    /*width: 40%;*/
+    /*position: absolute;*/
   }
 
   .nav-closed ul {
@@ -142,14 +148,17 @@ export default defineComponent({
 
   .nav-open {
     position: absolute;
-    width: 40%;
+    width: 100%;
     height: 80%;
-    top: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     opacity: 0;
     pointer-events: none;
+  }
+
+  .nav-button {
+    cursor: pointer;
   }
 </style>

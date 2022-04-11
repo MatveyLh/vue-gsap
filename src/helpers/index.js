@@ -5,9 +5,12 @@ export function toggleNavigation(timeline, refs) {
     timeline.to(cover, 1, {
         width: '60%',
         ease: Power2.easeOut
-    }).to(nav, 1, {
-        height: '100%',
+    }).fromTo(nav, 1, {
+        height: '100px',
         ease: Power2.easeOut,
+        strictUnits: 'height'
+    }, {
+        height: '100%',
     }, '-=1').fromTo(navOpen, 0.5, {
         opacity: 0,
         x: 50,
